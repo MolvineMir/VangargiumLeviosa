@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JTI X Experience Registration</title>
+    <title>JTI X U Application</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -68,8 +68,8 @@
 </head>
 <body>
     <div class="card">
-        <h1>JTI X Experience Registration</h1>
-        <form id="registrationForm">
+        <h1>JTI X U Application</h1>
+        <form id="applicationForm">
             <div>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -102,28 +102,28 @@
                 <label for="job">Current Job</label>
                 <input type="text" id="job" name="job" required>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Submit Application</button>
         </form>
         <div id="successMessage" class="success-message" style="display: none;">
-            <h2>Thank you for your submission!</h2>
-            <p>We'll be in touch with more details about the JTI X Experience event.</p>
+            <h2>Thank you for your application!</h2>
+            <p>We'll be in touch with more details about the JTI X U event.</p>
         </div>
     </div>
 
     <script>
-        const form = document.getElementById('registrationForm');
+        const form = document.getElementById('applicationForm');
         const successMessage = document.getElementById('successMessage');
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            const data = 
+            Object.fromEntries(formData.entries());
             console.log(data);  // Replace this with your actual form submission logic
 
             form.style.display = 'none';
             successMessage.style.display = 'block';
         });
     </script>
-
 </body>
 </html>
