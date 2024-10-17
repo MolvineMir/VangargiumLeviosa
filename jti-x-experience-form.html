@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JTI X Experience Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.25rem;
+        }
+        button {
+            background-color: #4f46e5;
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #4338ca;
+        }
+        .error {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        .success-message {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>JTI X Experience Registration</h1>
+        <form id="registrationForm">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="surname" required>
+            </div>
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div>
+                <label for="location">Country/City</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="linkedin">LinkedIn</label>
+                <input type="text" id="linkedin" name="linkedin">
+            </div>
+            <div>
+                <label for="major">University Major</label>
+                <input type="text" id="major" name="major" required>
+            </div>
+            <div>
+                <label for="job">Current Job</label>
+                <input type="text" id="job" name="job" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="successMessage" class="success-message" style="display: none;">
+            <h2>Thank you for your submission!</h2>
+            <p>We'll be in touch with more details about the JTI X Experience event.</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            console.log(data);  // Replace this with your actual form submission logic
+
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>

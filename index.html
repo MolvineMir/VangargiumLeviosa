@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JTI X Experience - Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid #d1d5db;
+            font-size: 2rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        .cell:hover {
+            transform: scale(1.05);
+        }
+        .cell:active {
+            transform: scale(0.95);
+        }
+        .message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .message.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Do you want to proceed further? Solve this puzzle</h1>
+        <div class="board" id="board"></div>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const board = document.getElementById('board');
+        const message = document.getElementById('message');
+        let currentBoard = Array(9).fill(null);
+        let gameOver = false;
+
+        function createBoard() {
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('div');
+                cell.classList.add('cell');
+                cell.addEventListener('click', () => handleClick(i));
+                board.appendChild(cell);
+            }
+        }
+
+        function handleClick(i) {
+            if (currentBoard[i] || gameOver) return;
+            currentBoard[i] = 'X';
+            updateBoard();
+            if (checkWinner(currentBoard)) {
+                endGame('You win!');
+                return;
+            }
+            if (currentBoard.every(cell => cell !== null)) {
+                endGame("It's a draw!");
+                return;
+            }
+            setTimeout(makeAIMove, 500);
+        }
+
+        function makeAIMove() {
+            const emptyCells = currentBoard.reduce((acc, cell, index) => {
+                if (cell === null) acc.push(index);
+                return acc;
+            }, []);
+            if (emptyCells.length > 0) {
+                const randomIndex = Math.floor(Math.random() * emptyCells.length);
+                const aiMove = emptyCells[randomIndex];
+                currentBoard[aiMove] = 'O';
+                updateBoard();
+                if (checkWinner(currentBoard)) {
+                    endGame('AI wins!');
+                    return;
+                }
+                if (currentBoard.every(cell => cell !== null)) {
+                    endGame("It's a draw!");
+                }
+            }
+        }
+
+        function updateBoard() {
+            const cells = board.getElementsByClassName('cell');
+            for (let i = 0; i < cells.length; i++) {
+                cells[i].textContent = currentBoard[i];
+            }
+        }
+
+        function checkWinner(board) {
+            const lines = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+            return lines.some(line => {
+                const [a, b, c] = line;
+                return board[a] && board[a] === board[b] && board[a] === board[c];
+            });
+        }
+
+        function endGame(msg) {
+            gameOver = true;
+            message.textContent = msg;
+            message.classList.add('show');
+            setTimeout(() => {
+                message.textContent = 'Redirecting to JTI X Experience event details...';
+                setTimeout(() => {
+                    window.location.href = 'jti-x-experience.html';
+                }, 3000);
+            }, 2000);
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>
