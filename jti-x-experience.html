@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JTI X Experience Event</title>
+    <title>JTI X U Event</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,6 +22,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
         nav ul {
             list-style-type: none;
@@ -73,20 +77,17 @@
             padding: 2rem;
             margin-bottom: 2rem;
         }
-        .grid {
+        .cta-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
         }
-        .image-grid img {
-            width: 100%;
-            height: auto;
+        .cta-item {
+            background-color: #4f46e5;
+            color: white;
+            padding: 2rem;
             border-radius: 0.375rem;
+            text-align: center;
         }
         footer {
             background-color: white;
@@ -99,11 +100,11 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="placeholder-logo.png" alt="JTI Logo" height="50">
+            <div class="logo">JTI X U</div>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#register">Register</a></li>
+                    <li><a href="#apply">Apply Now</a></li>
                 </ul>
             </nav>
         </div>
@@ -111,36 +112,44 @@
 
     <main>
         <section class="hero">
-            <h1>JTI X YOU event</h1>
-            <p>Made for you to Xperience, Xplore, Xpand</p>
-            <a href="jti-x-experience-form.html" class="btn">Ready to find your career match?</a>
+            <h1>JTI X U event</h1>
+            <p>Made for you to eXperience, eXplore, eXpand</p>
+            <a href="jti-x-experience-form.html" class="btn">Apply Now</a>
         </section>
 
         <section id="about">
             <div class="card">
-                <div class="grid">
-                    <div>
-                        <h2>About the Event</h2>
-                        <p>The JTI X YOU event is an immersive experience designed to help you discover your potential and explore exciting career opportunities. This unique event brings together industry experts, innovative thinkers, and ambitious individuals like yourself to create a dynamic environment for growth and networking. Through interactive workshops, inspiring keynotes, and personalized mentoring sessions, you'll gain valuable insights into the ever-evolving business landscape and find your perfect career match. Whether you're looking to expand your skillset, explore new industries, or find your professional X factor, JTI X YOU is your gateway to a world of possibilities.</p>
+                <h2>About the Event</h2>
+                <p>The JTI X U event is an immersive experience designed to help you discover your potential and explore exciting career opportunities. This unique event brings together industry experts, innovative thinkers, and ambitious individuals like yourself to create a dynamic environment for growth and networking. Through interactive workshops, inspiring keynotes, and personalized mentoring sessions, you'll gain valuable insights into the ever-evolving business landscape and find your perfect career match.</p>
+                <div class="cta-grid">
+                    <div class="cta-item">
+                        <h3>Interactive Workshops</h3>
+                        <p>Engage in hands-on learning experiences</p>
                     </div>
-                    <div class="image-grid">
-                        <img src="placeholder-event-1.jpg" alt="JTI Event Image 1">
-                        <img src="placeholder-event-2.jpg" alt="JTI Event Image 2">
-                        <img src="placeholder-event-3.jpg" alt="JTI Event Image 3">
-                        <img src="placeholder-event-4.jpg" alt="JTI Event Image 4">
+                    <div class="cta-item">
+                        <h3>Inspiring Keynotes</h3>
+                        <p>Learn from industry leaders and visionaries</p>
+                    </div>
+                    <div class="cta-item">
+                        <h3>Networking Opportunities</h3>
+                        <p>Connect with peers and potential employers</p>
+                    </div>
+                    <div class="cta-item">
+                        <h3>Career Guidance</h3>
+                        <p>Receive personalized advice from experts</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="register" class="hero">
-            <h2>Ready to find your X factor?</h2>
-            <a href="jti-x-experience-form.html" class="btn">Register Now</a>
+        <section id="apply" class="hero">
+            <h2>Ready to find your next career match?</h2>
+            <a href="jti-x-experience-form.html" class="btn">Apply Now</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 JTI. All rights reserved.</p>
+        <p>&copy; 2023 JTI X U. All rights reserved.</p>
     </footer>
 </body>
 </html>
