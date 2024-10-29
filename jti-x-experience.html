@@ -3,31 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Presentation</title>
+    <title>Vocational Education Modernization</title>
     <style>
-        body, html { height: 100vh; margin: 0; font-family: Arial, sans-serif; overflow-y: scroll; background-color: #f4f6f8; }
-        .content { padding: 20px; max-width: 800px; margin: auto; }
-        .section { margin-bottom: 50px; }
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+            scroll-behavior: smooth;
+        }
+        
+        /* Full Page Sections */
+        section {
+            min-height: 100vh;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Header Styling */
+        #intro {
+            background: linear-gradient(135deg, #6190E8, #A7BFE8);
+            color: #fff;
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        /* Interactive Headline Animation */
+        #intro h1 {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Research Sections */
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeInSlideUp 1s forwards;
+        }
+
+        .section-content {
+            max-width: 800px;
+            line-height: 1.8;
+            margin: 20px auto;
+            animation: fadeInSlideUp 1s 0.5s forwards;
+            opacity: 0;
+        }
+
+        /* Animation */
+        @keyframes fadeInSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Highlighted Quotes */
+        .quote {
+            font-size: 1.2em;
+            margin: 30px 0;
+            font-style: italic;
+            padding: 20px;
+            background: #eef;
+            border-left: 5px solid #6190E8;
+            opacity: 0;
+            animation: fadeInSlideUp 1s 0.7s forwards;
+        }
+
+        /* Button Styling */
+        .next-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background-color: #6190E8;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #A7BFE8;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8em;
+            opacity: 0.7;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Background for transitions */
+        .section-dark {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .section-light {
+            background-color: #fff;
+            color: #333;
+        }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Comparative Analysis of Vocational Education Modernisation</h1>
-        <div class="section" id="section1">
-            <h2>Introduction</h2>
-            <p>This research explores differences in vocational education in Russia and China...</p>
+
+    <!-- Introduction Section -->
+    <section id="intro">
+        <h1>Vocational Education Modernization</h1>
+        <p>A Comparative Analysis of Russia and China's Approaches</p>
+        <p class="scroll-down">Scroll Down to Explore</p>
+    </section>
+
+    <!-- Section 1: Overview of Research -->
+    <section class="section-light">
+        <div>
+            <h2 class="section-title">Research Overview</h2>
+            <div class="section-content">
+                <p>This research investigates vocational education modernization in the Russian Federation and the People’s Republic of China, showcasing the differences in reform strategies and effectiveness despite shared goals.</p>
+                <p>The study applies human capital theory to examine educational investments aimed at promoting sustainable economic growth, highlighting China’s dynamic development and Russia’s internal reform challenges.</p>
+            </div>
         </div>
-        <div class="section" id="section2">
-            <h2>Human Capital Theory</h2>
-            <p>Human Capital Theory impacts how these countries view educational investment...</p>
+    </section>
+
+    <!-- Section 2: Country Backgrounds -->
+    <section class="section-dark">
+        <div>
+            <h2 class="section-title">Country Backgrounds</h2>
+            <div class="section-content">
+                <h3>Russia</h3>
+                <p>As a transcontinental state with a centralized political structure, Russia faces unique challenges in modernizing vocational education amidst an evolving post-Soviet landscape.</p>
+                <h3>China</h3>
+                <p>China’s vocational education is characterized by state funding, regulatory control, and alignment with national economic needs, fostering rapid modernization in educational infrastructure.</p>
+            </div>
+            <blockquote class="quote">
+                “Education is fundamental to social relations and economic growth, enhancing labor productivity and fostering economic competitiveness.”
+            </blockquote>
         </div>
-        <div class="section" id="section3">
-            <h2>Conclusion</h2>
-            <p>Differences in funding approaches impact educational outcomes. China’s model...</p>
+    </section>
+
+    <!-- Section 3: Human Capital Theory -->
+    <section class="section-light">
+        <div>
+            <h2 class="section-title">Human Capital Theory</h2>
+            <div class="section-content">
+                <p>Human Capital Theory (HCT) links education with economic productivity and growth, establishing that higher educational levels enhance a nation’s economic output. However, HCT often overlooks socio-economic and cultural disparities impacting education quality.</p>
+                <p>Despite criticisms, HCT underscores the importance of education in fostering economic growth, aligning with China's emphasis on economic needs and vocational training.</p>
+            </div>
+            <button class="next-button" onclick="scrollToSection('next-section')">Explore Vocational Education Models</button>
         </div>
-    </div>
+    </section>
+
+    <!-- Section 4: Comparative Analysis -->
+    <section class="section-dark" id="next-section">
+        <div>
+            <h2 class="section-title">Comparative Analysis of Education Models</h2>
+            <div class="section-content">
+                <p>China’s educational model emphasizes extensive state involvement and multi-channel funding, enabling vocational education to align with labor market demands. Conversely, Russia’s model faces barriers such as limited funding and slow adoption of new technologies.</p>
+                <p>China’s progress is facilitated by industry partnerships and practical training centers, while Russia seeks to implement similar measures to overcome systemic barriers.</p>
+            </div>
+            <blockquote class="quote">
+                "China’s vocational education modernization strategy highlights significant economic growth potential through industry-specific training."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Section 5: Conclusion and Recommendations -->
+    <section class="section-light">
+        <div>
+            <h2 class="section-title">Conclusion</h2>
+            <div class="section-content">
+                <p>The comparative analysis reveals that China’s model, supported by state participation and multi-channel funding, can provide insights for Russia to enhance its vocational education system. Integrating Chinese practices could help Russia modernize education through industry partnerships and funding diversification.</p>
+                <p>These recommendations offer a roadmap for Russia’s vocational education reforms, aiming to bridge the gap and foster competitiveness in the global economy.</p>
+            </div>
+            <button class="next-button" onclick="location.href='thank_you.html'">Learn More</button>
+        </div>
+    </section>
+
+    <!-- JavaScript for Smooth Scrolling -->
     <script>
-        setTimeout(() => { window.location.href = "../page4/index.html"; }, 15000);
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
