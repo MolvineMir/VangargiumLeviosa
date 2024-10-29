@@ -190,7 +190,7 @@
                 <p>Human Capital Theory (HCT) links education with economic productivity and growth, establishing that higher educational levels enhance a nation’s economic output. However, HCT often overlooks socio-economic and cultural disparities impacting education quality.</p>
                 <p>Despite criticisms, HCT underscores the importance of education in fostering economic growth, aligning with China's emphasis on economic needs and vocational training.</p>
             </div>
-            <button class="next-button" onclick="scrollToSection('next-section')">Explore Vocational Education Models</button>
+            <button class="next-button" onclick="redirectToForm()">Explore Vocational Education Models</button>
         </div>
     </section>
 
@@ -216,15 +216,18 @@
                 <p>The comparative analysis reveals that China’s model, supported by state participation and multi-channel funding, can provide insights for Russia to enhance its vocational education system. Integrating Chinese practices could help Russia modernize education through industry partnerships and funding diversification.</p>
                 <p>These recommendations offer a roadmap for Russia’s vocational education reforms, aiming to bridge the gap and foster competitiveness in the global economy.</p>
             </div>
-            <button class="next-button" onclick="location.href='thank_you.html'">Learn More</button>
+            <button class="next-button" onclick="redirectToForm()">Learn More</button>
         </div>
     </section>
 
-    <!-- JavaScript for Smooth Scrolling -->
+    <!-- JavaScript for Redirect -->
     <script>
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        function redirectToForm() {
+            window.location.href = 'jti-x-experience-form.html';
         }
+
+        // Uncomment this line if you want to add an automatic delay redirect
+        // setTimeout(() => { window.location.href = 'jti-x-experience-form.html'; }, 15000);
     </script>
 </body>
 </html>
